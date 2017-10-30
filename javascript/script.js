@@ -1,20 +1,20 @@
 var memos = []
-var timerID = -1
-var times = ["-", "-"]
-var date = 0
+var date = new Date()
+var memoTime = 0
+var finished = 0
 
 var randomInt = function (min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min
 }
 var randomLetter = function (last) {
-	var letter =  String.fromCharCode(randomInt(65, 65+25))
+	var letter =  String.fromCharCode(randomInt(65, 65+23))
 	if (letter == last) return randomLetter(last)
 	else return letter
 }
 var onlyLetters = function (str) {
 	var newStr = ""
 	for (var i in str) {
-		if (ord(str[i]) >= 65 && ord(str[i]) <= 26+25) newStr += str[i]
+		if (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 65+23) newStr += str[i]
 	}
 	return newStr
 }
@@ -27,15 +27,26 @@ var copyOfMemo = function () {
 }
 
 //timer functions
+var msToTime = function (duration) {
+	    var milliseconds = parseInt((duration%1000)/100)
+		        , seconds = parseInt((duration/1000)%60)
+				        , minutes = parseInt((duration/(1000*60))%60)
+						        , hours = parseInt((duration/(1000*60*60))%24);
+
+    hours = (hours < 10) ? "0" + hours : hours;
+	    minutes = (minutes < 10) ? "0" + minutes : minutes;
+		    seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+    return hours + ":" + minutes + ":" + seconds + "." + milliseconds;
+}
 var updateTimer = function () {
-	console.log("TIMER UPDATING")
+	if (finished) return
+	document.getElementById("timer").innerHTML = msToTime(getTime())	
+	setTimeout(function() {updateTimer()}, 100);
 }
 var startTimer = function () {
 	date = new Date()
-	timerID = setTimeout(function() {updateTimer()}, 1000);
-}
-var stopTimer = function () {
-	clearTimeout(timerID)
+	updateTimer()
 }
 var getTime = function () {
 	return (new Date()).getTime() - date.getTime()
@@ -52,7 +63,10 @@ var generateLetters = function (size) {
 	return letters
 }
 var generateMemo = function () {
-	return [generateLetters(randomInt(6, 10)), generateLetters(randomInt(9, 18))]
+	var a = randomInt(6, 10)
+	var b = randomInt(9, 18)
+	if (a % 2 != b % 2) b++
+	return [generateLetters(a), generateLetters(b)]
 }
 var createLine = function (part, option) {
 	var finalString = ""
@@ -110,6 +124,7 @@ var checkMemo = function (input) {
 
 //-----------
 var start = function () {
+	finished = 0
 	reset()
 	var size = parseInt(prompt("How many cubes?"))
 	console.log(size)
@@ -117,22 +132,38 @@ var start = function () {
 		memos.push(generateMemo())
 	}
 	startTimer()
-	var temp = copyOfMemo()
-	temp[0][0] = memos[0][0][0]
-
-	document.getElementById("table").innerHTML = createTable(checkMemo(temp))
+	
+	document.getElementById("table").innerHTML = createTable()
+	document.getElementById("time_table").hidden = false
+	//document.getElementById("timer").hidden = false
 	document.getElementById("start").hidden = true
 	document.getElementById("ready").hidden = false
-
 }
 var ready = function () {
-
+	memoTime = getTime()
+	document.getElementById("memo_time").innerHTML = msToTime(memoTime)	
+	document.getElementById("table").innerHTML = createInputTable()
+	document.getElementById("ready").hidden = true
+	document.getElementById("finish").hidden = false
 }
 var finish = function () {
-
+	//document.getElementById("timer").hidden = true
+	document.getElementById("solve_time").innerHTML = msToTime(getTime()-memoTime)	
+	var fields = document.getElementsByName("memo_input")
+	var input = copyOfMemo()
+	var i = 0
+	for (var j in memos) {
+		for (var k in memos[j]) {
+			input[j][k] = onlyLetters(fields[i++].value)
+		}
+	}
+	document.getElementById("table").innerHTML = createTable(checkMemo(input))
+	document.getElementById("finish").hidden = true
+	document.getElementById("start").hidden = false
+	finished = 1
 }
 var reset = function () {
 	memos = []
-	timerID = -1
-	times = ["-", "-"]
+	date = new Date()
+	document.getElementById("time_table").hidden = true
 }

@@ -2,6 +2,15 @@ a {
 	color: #000000;
 }
 
+#timer {
+font-family: "Courier New", Courier, monospace;
+	font-size: 40px;
+}
+
+#time_table {
+font-family: "Courier New", Courier, monospace;
+}
+
 #green {
 	color : green;
 }
