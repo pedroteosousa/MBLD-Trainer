@@ -29,13 +29,23 @@
 	<br/>
 	<div class="container">
 		<div class="form-group row">
+			<div id="table" class="col-sm-12"> </div>
 			<div class="col-sm-4"></div>
 			<div class="col-sm-4">
-				<input style="background-color: #777976;" type="button" class="btn btn-block" value='Start' onclick="start(); return false;"/>
+				<input style="background-color: #777976;" type="button" class="btn btn-block" id="start" value='Start' onclick="start(); return false;"/>
+			</div>
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<input style="background-color: #777976;" type="button" class="btn btn-block" id="ready" value='Ready' onclick="ready(); return false;" hidden="true"/>
+			</div>
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<input style="background-color: #777976;" type="button" class="btn btn-block" id="finish" value='Finish' onclick="ready(); return false;" hidden="true"/>
 			</div>
 			<div class="col-sm-4"></div>
 		</div>
-		<div id="seila" class="col-sm-6"> </div>
 	</div>
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>

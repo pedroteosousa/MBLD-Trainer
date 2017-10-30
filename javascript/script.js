@@ -66,6 +66,18 @@ var createLine = function (part, option) {
 	}
 	return finalString
 }
+var createInputTable = function () {
+	var tableCode = '<table class="table table-bordered"><thead><tr><th scope="col">#</th><th scope="col">Corners</th><th scope="col">Edges</th></tr></thead><tbody>'
+	for (var i in memos) {
+		tableCode += '<tr><th scope="row">' + (parseInt(i) + 1).toString() + '</th>'
+		for (var j in memos[i]) {
+			tableCode += '<td>' + '<input type="text" class="form-control" name="memo_input"/>' + '</td>'
+		}
+		tableCode += '</tr>'
+	}
+	tableCode += '</tbody></table>'
+	return tableCode
+}
 var createTable = function (option) {
 	var tableCode = '<table class="table table-bordered"><thead><tr><th scope="col">#</th><th scope="col">Corners</th><th scope="col">Edges</th></tr></thead><tbody>'
 	for (var i in memos) {
@@ -107,7 +119,16 @@ var start = function () {
 	startTimer()
 	var temp = copyOfMemo()
 	temp[0][0] = memos[0][0][0]
-	document.getElementById("seila").innerHTML = createTable(checkMemo(temp))
+
+	document.getElementById("table").innerHTML = createTable(checkMemo(temp))
+	document.getElementById("start").hidden = true
+	document.getElementById("ready").hidden = false
+
+}
+var ready = function () {
+
+}
+var finish = function () {
 
 }
 var reset = function () {
