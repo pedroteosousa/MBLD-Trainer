@@ -1,0 +1,18 @@
+{
+  "name": "MBLD-Trainer",
+  "version": "1.0.0",
+  "description": "A trainer for MBLD",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pedroteosousa/MBLD-Trainer.git"
+  },
+  "author": "Pedro Sousa <pedroteosousa@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pedroteosousa/MBLD-Trainer/issues"
+  }
+}
