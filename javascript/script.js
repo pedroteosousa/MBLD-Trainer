@@ -3,22 +3,24 @@ var date = new Date()
 var memoTime = 0
 var finished = 0
 
-var start, progressHandle;
+Cube.asyncInit('https://linux.ime.usp.br/~pedrosousa/MBLD-Trainer/node_modules/cubejs/lib/worker.js', initialized);
 
+// free start button
 var initialized = function() {
 	document.getElementById("start").value = "Start"
 	document.getElementById("start").disabled = false
-};
+}
 
+// generate a random cube state
 var generateScramble = function() {
-	// Generate a scramble
 	const cube = Cube.random()
 	return getLetters(cube.toJSON())
-};
+}
 
 var edges = "BMCIDEAQVOUKXGWSJPLFRHTN"
 var corners = "CMJDIFAERBQNVKPUGLXSHWOT"
 
+// generate memo given a random state
 var getLetters = function(state) {
 	var cM = "", eM = ""
 	var cB = 3*2, eB = 2*5
@@ -80,36 +82,13 @@ var getLetters = function(state) {
 	return [cM, eM]
 }
 
+// disable start button for loading
 var init = function() {
 	document.getElementById("start").value = "Loading..."
 	document.getElementById("start").disabled = true
 	document.getElementById("start").style.color = "black"
 }
-	// Start measuring time
-	start = new Date;
 
-	// Start adding dots
-	progressHandle = setInterval(progress, 1000);
-
-	// Start precomputing
-	Cube.asyncInit('https://linux.ime.usp.br/~pedrosousa/MBLD-Trainer/node_modules/cubejs/lib/worker.js', initialized);
-
-
-var randomInt = function (min, max) {
-	return Math.floor(Math.random() * (max - min + 1)) + min
-}
-var randomLetter = function (last) {
-	var letter =  String.fromCharCode(randomInt(65, 65+23))
-		if (letter == last) return randomLetter(last)
-		else return letter
-}
-var onlyLetters = function (str) {
-	var newStr = ""
-		for (var i in str) {
-			if (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 65+23) newStr += str[i]
-		}
-	return newStr
-}
 var copyOfMemo = function () {
 	var temp = []
 		for (var i in memos) {
