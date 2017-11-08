@@ -18,6 +18,14 @@ var generateScramble = function() {
 var edges = "BMCIDEAQVOUKXGWSJPLFRHTN"
 var corners = "CMJDIFAERBQNVKPUGLXSHWOT"
 
+var onlyLetters = function (str) {
+	var newStr = ""
+		for (var i in str) {
+			if (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 65+23) newStr += str[i]
+		}
+	return newStr
+}
+
 // generate memo given a random state
 var getLetters = function(state) {
 	var cM = "", eM = ""
