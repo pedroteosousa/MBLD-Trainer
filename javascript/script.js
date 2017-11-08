@@ -3,8 +3,6 @@ var date = new Date()
 var memoTime = 0
 var finished = 0
 
-Cube.asyncInit('https://linux.ime.usp.br/~pedrosousa/MBLD-Trainer/node_modules/cubejs/lib/worker.js', initialized);
-
 // free start button
 var initialized = function() {
 	document.getElementById("start").value = "Start"
@@ -88,6 +86,8 @@ var init = function() {
 	document.getElementById("start").disabled = true
 	document.getElementById("start").style.color = "black"
 }
+
+Cube.asyncInit('https://linux.ime.usp.br/~pedrosousa/MBLD-Trainer/node_modules/cubejs/lib/worker.js', initialized);
 
 var copyOfMemo = function () {
 	var temp = []
