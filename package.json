@@ -14,5 +14,8 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pedroteosousa/MBLD-Trainer/issues"
+  },
+  "dependencies": {
+    "cubejs": "^1.0.3"
   }
 }
