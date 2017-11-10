@@ -9,3 +9,6 @@ Hosted [here](https://linux.ime.usp.br/~pedrosousa/MBLD-Trainer)
 - Option to show scrambles that generated each cube.
 
 These are not necessarily in the order I intend to implement them.
+
+#Credits
+This program uses [cubejs](https://github.com/ldez/cubejs) to generate random cube states.
