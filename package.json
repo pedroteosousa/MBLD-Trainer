@@ -1,5 +1,5 @@
 {
-  "name": "MBLD-Trainer",
+  "name": "MBLD Trainer",
   "version": "1.0.0",
   "description": "A trainer for MBLD",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pedroteosousa/MBLD-Trainer.git"
+    "url": "https://github.com/pedroteosousa/MBLDtrainer.git"
   },
   "author": "Pedro Sousa <pedroteosousa@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pedroteosousa/MBLD-Trainer/issues"
+    "url": "https://github.com/pedroteosousa/MBLDtrainer/issues"
   },
   "dependencies": {
     "cubejs": "^1.0.3"
