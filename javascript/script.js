@@ -214,9 +214,11 @@ var start = function () {
 
 		document.getElementById("table").innerHTML = createTable()
 		document.getElementById("time_table").hidden = false
+		document.getElementById("table").hidden = false
 		//document.getElementById("timer").hidden = false
 		document.getElementById("start").hidden = true
 		document.getElementById("ready").hidden = false
+	document.getElementById("timer").hidden = false
 }
 var ready = function () {
 	memoTime = getTime()
@@ -240,6 +242,14 @@ var finish = function () {
 		document.getElementById("finish").hidden = true
 		document.getElementById("start").hidden = false
 		finished = 1
+}
+var resetButton = function() {
+	document.getElementById("finish").hidden = true
+	document.getElementById("ready").hidden = true
+	document.getElementById("start").hidden = false
+	document.getElementById("table").hidden = true
+	document.getElementById("time_table").hidden = true
+	document.getElementById("timer").hidden = true
 }
 var reset = function () {
 	memos = []
