@@ -202,6 +202,8 @@ var checkMemo = function (input) {
 
 //-----------
 var start = function () {
+	document.getElementById("memo_time").innerHTML = "-"
+	document.getElementById("solve_time").innerHTML = "-"	
 	finished = 0
 		reset()
 		var size = parseInt(prompt("How many cubes?"))
