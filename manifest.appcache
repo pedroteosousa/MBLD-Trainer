@@ -1,14 +1,23 @@
 CACHE MANIFEST
 
 CACHE:
+
+# main web page
 index.html
+
+# css
 css/style.css
+
+#javascript
 javascript/script.js
+
+#cubejs files
 node_modules/cubejs/lib/cube.js
 node_modules/cubejs/lib/async.js
 node_modules/cubejs/lib/worker.js
 node_modules/cubejs/lib/solve.js
 
+#jquery and bootstrap
 https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js
 https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js
 https://code.jquery.com/jquery-3.2.1.slim.min.js
