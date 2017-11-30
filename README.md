@@ -10,5 +10,5 @@ Hosted [here](https://linux.ime.usp.br/~pedrosousa/MBLD-Trainer)
 
 These are not necessarily in the order I intend to implement them.
 
-# Credits
-This program uses [cubejs](https://github.com/ldez/cubejs) to generate random cube states.
+# Random Cube Generator
+This program uses the npm package [rubiks-cube](https://github.com/pedroteosousa/rubiks-cube) to generate random cube states.
