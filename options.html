@@ -7,10 +7,10 @@
 		<title>MBLD Trainer</title>
 
 		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="css/light.css" title="light" id="css">		
+		<link rel="stylesheet" href="css/light.css" id="css">		
+		<link rel="stylesheet" href="css/all.css">		
 
 		<script src="https://linux.ime.usp.br/~pedrosousa/MBLD-Trainer/node_modules/rubiks-cube/cube.js"></script>
-		<script src="javascript/script.js"></script>
 		<script src="javascript/options.js"></script>
 	</head>
 
@@ -19,53 +19,30 @@
 			<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar-links" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<a class="navbar-brand" href="">MBLD Trainer</a>
+			<a class="navbar-brand" href="index.html">MBLD Trainer</a>
 			<div class="collapse navbar-collapse" id="navbar-links">
 				<ul class="navbar-nav mr-auto">
-					<li class="nav-item">
-						<a class="nav-link" href="options.html">Options<span class="sr-only">(current)</span></a>
+					<li class="nav-item active">
+						<a class="nav-link" href="">Options<span class="sr-only">(current)</span></a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="info.html">Info</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" onclick=resetButton()>Reset</a>
 					</li>
 				</ul>
 			</div>
 		</nav>
 
 		<div class="container">
-
 			<div class="trainer">
-				<p class="trainer-info" id="trainer-info">
-				Buffers: <b>UBL</b> and <b>DF</b>
-					<br/>
-					Letter Scheme: <b>Speffz</b>
-				</p>
-
-				<div class="container">
-					<div class="col-sm-12"><center><h1 id="timer"></h1></center></div>
-					<div class="col-sm-4"></div>
-					<table hidden="true" id="time_table" class="col-sm-4 table">	
-						<thead>
-							<tr>
-								<th scope="col">Memo</th>
-								<th scope="col">Solve</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td id="memo_time">-</th>
-								<td id="solve_time">-</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<div id="table" class="col-sm-12"></div>
-				<input style="background-color: #777976;" type="button" class="btn" id="start" value='Start' onclick="start(); return false;"/>
-				<input style="background-color: #777976;" type="button" class="btn" id="ready" value='Ready' onclick="ready(); return false;" hidden="true"/>
-				<input style="background-color: #777976;" type="button" class="btn" id="finish" value='Finish' onclick="finish(); return false;" hidden="true"/>
+				<h5>Themes:</h5>
+				<table class="theme-table">
+					<th>
+						<input type="radio" name="theme" class="theme" value="0" /><label class="label" for="dark">Dark</label>
+					</th>
+					<th>
+						<input type="radio" name="theme" class="theme" value="1" /><label class="label" for="light">Light</label>
+					</th>
+				</table>
 			</div>
 		</div><!-- /.container -->
 

@@ -3,13 +3,7 @@ var date = new Date()
 var memoTime = 0
 var finished = 0
 
-// free start button
-var initialized = function() {
-	document.getElementById("start").value = "Start"
-	document.getElementById("start").disabled = false
-}
-
-// remove anything but letters from a string
+// Remove anything but letters from a string
 var onlyLetters = function (str) {
 	var newStr = ""
 	for (var i in str) {
@@ -18,10 +12,10 @@ var onlyLetters = function (str) {
 	return newStr
 }
 
-// generate a random cube state
+// Generate a random cube state
 var generateScramble = function() {
 	const cube = Cube.random()
-	return getLetters(cube.toJSON())
+	return getLetters(cube)
 }
 
 // letter scheme
@@ -91,17 +85,7 @@ var getLetters = function(state) {
 	return [cM, eM]
 }
 
-// disable start button for loading
-var init = function() {
-	document.getElementById("start").value = "Loading..."
-	document.getElementById("start").disabled = true
-	document.getElementById("start").style.color = "black"
-}
-
-// prepare the soil
-Cube.asyncInit('https://linux.ime.usp.br/~pedrosousa/MBLD-Trainer/node_modules/cubejs/lib/worker.js', initialized);
-
-// create copy of memo array
+// Create copy of memo array
 var copyOfMemo = function () {
 	var temp = []
 	for (var i in memos) {
@@ -110,7 +94,7 @@ var copyOfMemo = function () {
 	return temp
 }
 
-//timer functions
+// Timer functions
 var msToTime = function (duration) {
 	var milliseconds = parseInt((duration%1000)/100)
 		, seconds = parseInt((duration/1000)%60)
@@ -136,7 +120,7 @@ var getTime = function () {
 	return (new Date()).getTime() - date.getTime()
 }
 
-//memo handling functions
+// Memo handling functions
 var generateMemo = function () {
 	var temp = generateScramble()
 	return temp
@@ -215,6 +199,7 @@ var start = function () {
 	document.getElementById("start").hidden = true
 	document.getElementById("ready").hidden = false
 	document.getElementById("timer").hidden = false
+	document.getElementById("trainer-info").hidden = true
 }
 var ready = function () {
 	memoTime = getTime()
@@ -245,9 +230,11 @@ var resetButton = function() {
 	document.getElementById("table").hidden = true
 	document.getElementById("time_table").hidden = true
 	document.getElementById("timer").hidden = true
+	document.getElementById("trainer-info").hidden = false
 }
 var reset = function () {
 	memos = []
 	date = new Date()
 	document.getElementById("time_table").hidden = true
 }
+

@@ -1,0 +1,31 @@
+body {
+	color:#000;
+	background-color: #EEEEEE;
+	padding-top: 5rem;
+}
+
+.trainer {
+	padding: 3rem 1.5rem;
+	text-align: center;
+}
+
+a, a:hover, a:link {
+	color: #000;
+}
+
+#timer {
+font-family: "Courier New", Courier, monospace;
+	font-size: 40px;
+}
+
+#time_table {
+font-family: "Courier New", Courier, monospace;
+}
+
+#green {
+	color : #1B5E20;
+}
+
+#red {
+	color : #B71C1C;
+}

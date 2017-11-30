@@ -1,0 +1,26 @@
+CACHE MANIFEST
+
+CACHE:
+
+# main web page
+index.html
+options.html
+info.html
+
+# css
+css/dark.css
+css/light.css
+css/all.css
+css/bootstrap.min.css
+
+#javascript
+javascript/script.js
+javascript/options.js
+javascript/bootstrap.min.js
+
+#cubejs files
+node_modules/rubiks-cube/cube.js
+
+#jquery and bootstrap
+https://code.jquery.com/jquery-3.1.1.slim.min.js
+https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js

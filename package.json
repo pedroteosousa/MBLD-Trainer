@@ -1,5 +1,5 @@
 {
-  "name": "MBLD Trainer",
+  "name": "MBLD-Trainer",
   "version": "1.0.0",
   "description": "A trainer for MBLD",
   "main": "index.js",
@@ -16,6 +16,6 @@
     "url": "https://github.com/pedroteosousa/MBLDtrainer/issues"
   },
   "dependencies": {
-    "cubejs": "^1.0.3"
+    "rubiks-cube": "^2.0.1"
   }
 }
