@@ -16,6 +16,6 @@
     "url": "https://github.com/pedroteosousa/MBLDtrainer/issues"
   },
   "dependencies": {
-    "rubiks-cube": "^2.0.1"
+    "rubiks-cube": "^2.3.0"
   }
 }
